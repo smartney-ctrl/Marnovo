@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marnavo — Tailored for the World</title>
+<meta name="description" content="Marnavo is a premium ready-to-wear shirt house, tailored for retail and wholesale, shipping nationwide and worldwide.">
+<link rel="icon" type="image/png" href="assets/monogram.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#1B2A41;
+    --charcoal:#22262A;
+    --sand:#D8C3A5;
+    --ivory:#F5F1EA;
+    --amber:#C1712F;
+    --gold:#B8985A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--charcoal);
+    background:var(--ivory);
+    line-height:1.6;
+  }
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:600; color:var(--navy); }
+  a{ text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .container{ max-width:1100px; margin:0 auto; padding:0 24px; }
+
+  /* Header */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(27,42,65,0.96);
+    backdrop-filter:blur(6px);
+    padding:14px 0;
+  }
+  header .container{ display:flex; align-items:center; justify-content:space-between; }
+  header img.logo{ height:36px; }
+  nav a{
+    color:var(--ivory); font-size:14px; font-weight:500; margin-left:28px;
+    letter-spacing:0.03em; transition:color .2s;
+  }
+  nav a:hover{ color:var(--gold); }
+  .nav-cta{
+    background:var(--gold); color:var(--navy) !important; padding:9px 18px;
+    border-radius:30px; font-weight:600;
+  }
+  @media (max-width:720px){
+    nav a:not(.nav-cta){ display:none; }
+  }
+
+  /* Hero */
+  .hero{
+    position:relative; min-height:100vh; display:flex; align-items:center;
+    background:linear-gradient(180deg, rgba(27,42,65,0.55), rgba(27,42,65,0.85)), url('assets/hero-shirt.png') center/cover no-repeat;
+    color:var(--ivory); padding-top:90px;
+  }
+  .hero .container{ max-width:720px; }
+  .hero p.eyebrow{ color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; font-size:13px; margin-bottom:16px; font-weight:600; }
+  .hero h1{ font-size:52px; color:var(--ivory); line-height:1.1; margin-bottom:18px; }
+  .hero h1 em{ color:var(--sand); font-style:italic; }
+  .hero p.sub{ font-size:18px; color:var(--sand); margin-bottom:32px; max-width:520px; }
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:30px;
+    font-weight:600; font-size:15px; transition:transform .2s, opacity .2s;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:#25D366; color:#fff; }
+  .btn-secondary{ background:transparent; color:var(--ivory); border:1.5px solid var(--sand); }
+
+  /* Section generic */
+  section{ padding:90px 0; }
+  .section-title{ text-align:center; margin-bottom:56px; }
+  .section-title p.eyebrow{ color:var(--amber); text-transform:uppercase; letter-spacing:0.15em; font-size:13px; font-weight:600; margin-bottom:10px;}
+  .section-title h2{ font-size:36px; }
+
+  /* About */
+  .about{ background:var(--ivory); }
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .about-grid img{ border-radius:6px; }
+  .about-text p{ margin-bottom:16px; color:var(--charcoal); font-size:16px; }
+  @media (max-width:800px){ .about-grid{ grid-template-columns:1fr; } }
+
+  /* Collection */
+  .collection{ background:var(--navy); color:var(--ivory); }
+  .collection .section-title h2{ color:var(--ivory); }
+  .collection .section-title p.eyebrow{ color:var(--gold); }
+  .product-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .product-card{ background:rgba(255,255,255,0.04); border:1px solid rgba(216,195,165,0.25); border-radius:8px; overflow:hidden; }
+  .product-card img{ aspect-ratio:1/1; object-fit:cover; }
+  .product-card .pc-body{ padding:18px 20px; }
+  .product-card h3{ color:var(--ivory); font-size:19px; margin-bottom:6px; }
+  .product-card p{ color:var(--sand); font-size:14px; }
+  @media (max-width:800px){ .product-grid{ grid-template-columns:1fr; } }
+
+  /* Why us */
+  .why{ background:var(--sand); }
+  .why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:32px; text-align:center; }
+  .why-item .icon{ font-size:30px; margin-bottom:14px; }
+  .why-item h3{ font-size:17px; margin-bottom:8px; color:var(--navy); }
+  .why-item p{ font-size:14px; color:var(--charcoal); }
+  @media (max-width:800px){ .why-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .why-grid{ grid-template-columns:1fr; } }
+
+  /* Contact / CTA */
+  .contact{ background:var(--ivory); text-align:center; }
+  .contact h2{ font-size:34px; margin-bottom:16px; }
+  .contact p{ max-width:560px; margin:0 auto 36px; font-size:16px; color:var(--charcoal); }
+  .contact-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:900px; margin:0 auto 40px; }
+  .c-card{ background:#fff; border:1px solid rgba(27,42,65,0.1); border-radius:10px; padding:28px 20px; }
+  .c-card .icon{ font-size:26px; margin-bottom:10px; }
+  .c-card h4{ font-family:'Fraunces',serif; color:var(--navy); margin-bottom:6px; font-size:16px; }
+  .c-card p{ font-size:14px; color:var(--charcoal); margin:0; }
+  @media (max-width:800px){ .contact-cards{ grid-template-columns:1fr; } }
+
+  /* Map placeholder */
+  .map-embed{ margin-top:40px; border-radius:10px; overflow:hidden; height:260px; background:var(--sand); display:flex; align-items:center; justify-content:center; color:var(--navy); font-size:14px; font-weight:600;}
+
+  /* Footer */
+  footer{ background:var(--navy); color:var(--sand); padding:50px 0 24px; }
+  .footer-grid{ display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:34px; }
+  footer img.logo{ height:32px; margin-bottom:14px; }
+  footer p{ font-size:14px; color:var(--sand); }
+  footer h4{ color:var(--ivory); font-family:'Inter',sans-serif; font-size:14px; margin-bottom:14px; letter-spacing:0.05em; text-transform:uppercase; }
+  footer ul{ list-style:none; }
+  footer ul li{ margin-bottom:10px; }
+  footer ul li a{ color:var(--sand); font-size:14px; }
+  footer ul li a:hover{ color:var(--gold); }
+  .footer-bottom{ border-top:1px solid rgba(216,195,165,0.2); padding-top:20px; text-align:center; font-size:13px; color:rgba(216,195,165,0.6); }
+  @media (max-width:800px){ .footer-grid{ grid-template-columns:1fr; } }
+
+  /* Floating WhatsApp button */
+  .whatsapp-float{
+    position:fixed; bottom:24px; right:24px; z-index:200;
+    background:#25D366; color:#fff; width:60px; height:60px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,0.25);
+    font-size:28px; transition:transform .2s;
+  }
+  .whatsapp-float:hover{ transform:scale(1.08); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="assets/logo-light.png" alt="Marnavo" class="logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#collection">Collection</a>
+      <a href="#why">Why Marnavo</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/2340000000000" class="nav-cta">WhatsApp Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <p class="eyebrow">Premium Ready-to-Wear Shirts</p>
+    <h1>Tailored <em>for the World.</em></h1>
+    <p class="sub">Marnavo crafts vintage, linen, striped, and richly textured shirts for men and women — built for boutiques, distributors, and discerning individuals alike.</p>
+    <div class="btn-row">
+      <a href="https://wa.me/2340000000000" class="btn btn-primary">💬 Chat on WhatsApp</a>
+      <a href="#collection" class="btn btn-secondary">View Collection</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-title">
+      <p class="eyebrow">Our Story</p>
+      <h2>Crafted with Intention</h2>
+    </div>
+    <div class="about-grid">
+      <img src="assets/collection.png" alt="Marnavo shirt collection">
+      <div class="about-text">
+        <p>Marnavo was founded on a simple belief: quality tailoring shouldn't be limited by geography. From our first stitch, we set out to build a shirt house that could serve one boutique or one thousand — without ever compromising on craftsmanship.</p>
+        <p>Every Marnavo piece is designed in our signature palette of deep navy, warm sand, and muted gold — a nod to timeless tailoring with a distinctly modern edge.</p>
+        <p>Today, Marnavo supplies retail customers and wholesale partners across multiple states, with an eye on expanding worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="collection" id="collection">
+  <div class="container">
+    <div class="section-title">
+      <p class="eyebrow">The Collection</p>
+      <h2>Shirts, Reimagined</h2>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="assets/product-1.png" alt="Striped shirts">
+        <div class="pc-body">
+          <h3>Striped Shirts</h3>
+          <p>Crisp, classic, versatile — for everyday tailored style.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="assets/product-2.png" alt="Vintage shirts">
+        <div class="pc-body">
+          <h3>Vintage Shirts</h3>
+          <p>Rich prints and heritage-inspired patterns with character.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="assets/product-3.png" alt="Textured knit shirts">
+        <div class="pc-body">
+          <h3>Textured Knits</h3>
+          <p>Elevated texture for a modern, relaxed silhouette.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-title">
+      <p class="eyebrow" style="color:var(--amber)">Why Marnavo</p>
+      <h2>Built to Scale, Made to Last</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon">🧵</div>
+        <h3>Premium Fabric</h3>
+        <p>Pre-shrunk, colorfast cotton, linen &amp; knit blends.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">📦</div>
+        <h3>Retail &amp; Wholesale</h3>
+        <p>Flexible pricing from single pieces to 250+ unit orders.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">🌍</div>
+        <h3>Nationwide Shipping</h3>
+        <p>Reliable delivery across multiple states, and beyond.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">💬</div>
+        <h3>Personal Service</h3>
+        <p>Order and get support directly via WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Let's Talk</h2>
+    <p>Whether you're placing a personal order or a wholesale inquiry, we're one message away.</p>
+    <div class="contact-cards">
+      <div class="c-card">
+        <div class="icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p>+234 000 000 0000</p>
+      </div>
+      <div class="c-card">
+        <div class="icon">✉️</div>
+        <h4>Email</h4>
+        <p>hello@marnavo.com</p>
+      </div>
+      <div class="c-card">
+        <div class="icon">📸</div>
+        <h4>Instagram</h4>
+        <p>@marnavo</p>
+      </div>
+    </div>
+    <a href="https://wa.me/2340000000000" class="btn btn-primary" style="background:#25D366; color:#fff;">💬 Message Us on WhatsApp</a>
+    <div class="map-embed">📍 Google Business Profile / Map Embed — add once location is set up</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-dark.png" alt="Marnavo" class="logo">
+        <p>Marnavo is a premium ready-to-wear shirt house, tailored for the world — serving retail customers and wholesale partners nationwide.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#why">Why Marnavo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://wa.me/2340000000000">WhatsApp</a></li>
+          <li><a href="#">Instagram — @marnavo</a></li>
+          <li><a href="#">Facebook — /marnavo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Marnavo. All rights reserved. — Tailored for the World.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2340000000000" class="whatsapp-float" aria-label="Chat on WhatsApp">💬</a>
+
+</body>
+</html>
